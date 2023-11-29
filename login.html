@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(주)케이디상사</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header id="header">
+            <h1>(주)케이디상사</h1>
+            <ul class="ful">
+                <li><a href="./login.html">로그인</a></li>
+                <li><a href="./signup.html">회원가입</a></li>
+                <li><a href="#">장바구니</a></li>
+                <li><a href="#">주문조회</a></li>
+            </ul>
+                <div class="logo-img">
+                    <a href="./index.html"><img src="../img/logo.png" alt="로고"></a>
+                </div>
+                <ul class="sul">
+                    <li><a href="./about.html">회사소개</a></li>
+                    <li><a href="./hood.html">주방후드</a></li>
+                    <li><a href="./cook.html">전기쿡탑/가스쿡탑</a></li>
+                    <li><a href="./sink.html">싱크볼/주방수전</a></li>
+                    <li><a href="./acc.html">철물/악세사리</a></li>
+                    <li><a href="./alr.html">주방손잡이/알루미늄</a></li>
+                </ul>
+        </header>
+        <div id="sec-log">
+            <form style="display: none;">
+                <h1>회원가입</h1>
+                <div> email : <input type="email" id="signUpEmail" /> </div>
+                <div> password : <input type="password" id="signUpPassword" /> </div>
+                <button type="submit" id="signUpButton" >회원가입 하기</button>
+                <button >로그인 하러 가기</button>
+        
+            </form>
+
+
+            <h2>LOGIN</h2>
+            <div class="container">
+                <form class="two">
+                    <div class="bo">
+                        <ul class="howlog">
+                            <li id="div1">개인 로그인</li>
+                            <li id="div2">기업 로그인</li>
+                        </ul>
+                    </div>
+                    <div class="ip"><input type="email" id="signInEmail" placeholder="이메일"/> </div>
+                    <div class="ip"><input type="password" id="signInPassword" placeholder="비밀번호"/> </div>
+                    <div class="rock">
+                        <img src="../img/ico_ssl.png" alt="rock"><span>보안접속</span>
+                    </div><br>
+                    <button type="submit" id="signInButton" >로그인</button> <br>
+                    <a href="./sign.html" class="ff">회원가입</a>
+                </form>
+            </div>
+            <script type="module">
+                // Import the functions you need from the SDKs you need
+                import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
+                import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-analytics.js";
+                // TODO: Add SDKs for Firebase products that you want to use
+                // https://firebase.google.com/docs/web/setup#available-libraries
+              
+                // Your web app's Firebase configuration
+                // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+                const firebaseConfig = {
+                  apiKey: "AIzaSyCVO7TE5RQVzTFil6Q83PHvlsXs48VPKl8",
+                  authDomain: "kdsangsa-e21eb.firebaseapp.com",
+                  projectId: "kdsangsa-e21eb",
+                  storageBucket: "kdsangsa-e21eb.appspot.com",
+                  messagingSenderId: "411663452900",
+                  appId: "1:411663452900:web:14b04eb538d2ca8f627af1",
+                  measurementId: "G-W6SCWJ73BZ"
+                };
+              
+                // Initialize Firebase
+                const app = initializeApp(firebaseConfig);
+                const analytics = getAnalytics(app);
+        
+                import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-auth.js";
+        
+                const auth = getAuth();
+        
+                document.getElementById('signUpButton').addEventListener('click', (event) => {
+                    event.preventDefault()
+                    const signUpEmail = document.getElementById('signUpEmail').value
+                    const signUpPassword = document.getElementById('signUpPassword').value
+        
+                    createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword)
+                        .then((userCredential) => {
+                            console.log(userCredential)
+                            // Signed in
+                            const user = userCredential.user;
+                            // ...
+                        })
+                        .catch((error) => {
+                            console.log('error')
+                            const errorCode = error.code;
+                            const errorMessage = error.message;
+                            // ..
+                        });
+        
+                })
+        
+                document.getElementById('signInButton').addEventListener('click', (event) => {
+                    event.preventDefault()
+                    const signInEmail = document.getElementById('signInEmail').value
+                    const signInPassword = document.getElementById('signInPassword').value
+                    signInWithEmailAndPassword(auth, signInEmail, signInPassword)
+                        .then((userCredential) => {
+                            // Signed in
+                            console.log(userCredential)
+                            const user = userCredential.user;
+                            window.location.href = './main.html';
+                            // ...
+                        })
+                        .catch((error) => {
+                            console.log('로그인 실패')
+                            const errorCode = error.code;
+                            const errorMessage = error.message;
+                            alert('회원정보가 올바르지 않습니다.')
+                        });
+        
+                })
+
+                const todo = document.querySelector(".bo ul li:nth-child(2)");
+                const sectodo = document.querySelector(".bo ul li:nth-child(1)");
+                function handleTitleClick() {
+                    // console.log(todo.style.color);
+                    todo.style.backgroundColor = "rgb(50, 105, 68)";
+                    sectodo.style.backgroundColor = "#f0e9e9";
+                    todo.style.color = "#f3eeee";
+                    sectodo.style.color = "#1a1818";
+                }
+
+                todo.addEventListener("click", handleTitleClick);
+            
+              </script>
+
+
+                <script>
+
+                    window.onload = function () {
+                        var el = document.getElementById("div1");
+                        el.onclick = hello;
+                    }
+
+                    function hello()  {
+                        document.getElementById("div1").style.backgroundColor = "rgb(50, 105, 68)";
+                        document.getElementById("div1").style.color = "#f3eeee";
+                        document.getElementById("div2").style.backgroundColor = "#f0e9e9";
+                        document.getElementById("div2").style.color = "#1a1818";
+                    }
+
+                    
+
+                </script>
+        </div>
+    </div>
+        <footer id="footer">
+            <address>
+                법인명 : (주)케이디상사 |
+                대표자 : 정황선 |
+                사업자 등록번호 : 000-00-00000 |
+                통신판매업 : 제 0000-XXXX동-0000호 <br>
+                TEL : 010-0000-0000 |
+                FAX : 000.000.0000 |
+                주소 : 인천시 00구 000로 0000번길 00 <br>
+                <br>
+                Copyright ⓒ (주)케이디상사. All Rights reserved.
+            </address>
+        </footer>
+
+    </div>
+</body>
+</html>

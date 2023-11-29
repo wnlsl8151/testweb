@@ -1,0 +1,181 @@
+@charset 'utf-8';
+
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;500&display=swap');
+
+*{
+    max-width: 2000px;
+    /* min-width: 400px; */
+}
+
+.wrap{
+    position: relative;
+    /* max-width: 1300px; */
+}
+
+haeder{
+    margin-bottom: 500px;
+}
+
+h1{
+    display: none;
+}
+
+.ful{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    border-bottom: 1px solid #ebe8e8;
+    margin-bottom: 30px;
+    padding-left: 10%;
+    /* margin-left: 50px; */
+}
+
+.ful li{
+    font-size: 12px;
+    padding: 15px;
+}
+
+.logo-img{
+    width: 150px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.sul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: 0 auto;
+    border-bottom: 1px solid #ebe8e8;
+    border-top: 1px solid #b8b8b8;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 150px;
+}
+
+.sul li{
+    cursor: pointer;
+    width: 10%;
+    text-align: center;
+}
+
+.sul li:hover{
+    background-color: #bbb;
+    color: #fff;
+    animation: nav 0.5s;
+}
+
+#footer{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #615e5e;
+    padding: 30px;
+    padding-left: 300px;
+    padding-bottom: 20px;
+    border-top: 1px #b8b8b8 solid;
+}
+
+form{
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+
+span{
+    width: 50px;
+    text-align: left;
+    /* display: none; */
+}
+
+.x{
+    display: flex;
+    margin-bottom: 30px;
+    border: none;
+}
+
+.check{
+    display: flex;
+    justify-content: start;
+    height: 70px;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.check p{
+    margin-left: 10px;
+}
+
+.star{
+    color: red;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+.mem{
+    margin-left: 20px;
+    margin-right: 52px;
+}
+
+.gae{
+    margin-right: 30px;
+}
+
+.cb{
+    border-radius: 10px;
+}
+
+.txt{
+    font-size: 12px;
+}
+
+.xy{
+    display: flex;
+}
+
+.o{
+    display: block;
+    /* margin: 0; */
+}
+
+#signUpButton{
+    text-align: center;
+    margin: 0 auto;
+}
+
+.mall{
+    color: #9e9a9a;
+    /* width: 1800px; */
+}
+
+.mall h3{
+    font-weight: 700;
+    /* text-align: center; */
+    font-size: 18px;
+    color: #615e5e;
+}
+
+#yes{
+    margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+@keyframes fade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes nav {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

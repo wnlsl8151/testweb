@@ -1,0 +1,202 @@
+@charset 'utf-8';
+
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;500&display=swap');
+
+        .wrap{
+            position: relative;
+        }
+
+        haeder{
+            margin-bottom: 500px;
+        }
+
+        h1{
+            display: none;
+        }
+
+        .ful{
+            display: flex;
+            flex-flow: row nowrap;
+            width: 100%;
+            border-bottom: 1px solid #ebe8e8;
+            margin-bottom: 30px;
+            padding-left: 10%;
+            /* margin-left: 50px; */
+        }
+
+        .ful li{
+            font-size: 12px;
+            padding: 15px;
+        }
+
+        .logo-img{
+            width: 150px;
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
+
+        .sul{
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-evenly;
+            width: 80%;
+            margin: 0 auto;
+            border-bottom: 1px solid #ebe8e8;
+            border-top: 1px solid #b8b8b8;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 150px;
+        }
+
+        .sul li{
+            cursor: pointer;
+            width: 10%;
+            text-align: center;
+        }
+
+        .sul li:hover{
+            background-color: #bbb;
+            color: #fff;
+            animation: nav 0.5s;
+        }
+
+        #sec01{
+            margin-bottom: 100px;
+        }
+
+        #sec01 h2{
+            text-align: center;
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 50px;
+        }
+
+        .hot ul{
+            width: 80%;
+            text-align: center;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        .hot ul li img{
+            width: 90%;
+            margin-bottom: 10px;
+            border-radius: 15px;
+        }
+
+        .hot ul li p{
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .hot ul li .won{
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        #sec02{
+            margin-bottom: 100px;
+        }
+        
+        #sec02 h2{
+            font-size: 30px;
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 50px;
+        }
+
+        .new ul{
+            width: 80%;
+            text-align: center;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        .new ul li img{
+            width: 90%;
+            margin-bottom: 10px;
+            border-radius: 15px;
+        }
+
+        .new ul li p{
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .new ul li .won{
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        #sec03{
+            margin-bottom: 100px;
+        }
+        
+        #sec03 h2{
+            font-size: 30px;
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 50px;
+        }
+
+        .all ul{
+            width: 80%;
+            text-align: center;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        .all ul li img{
+            width: 90%;
+            margin-bottom: 10px;
+            border-radius: 15px;
+        }
+
+        .all ul li p{
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .all ul li .won{
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+
+        #footer{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            color: #615e5e;
+            padding: 30px;
+            padding-left: 300px;
+            padding-bottom: 20px;
+            border-top: 1px #b8b8b8 solid;
+        }
+
+        #sec03 li{
+            margin-bottom: 150px;
+        }
+
+        .won span{
+            font-size: 12px;
+            color: red;
+        }
+
+
+        
+
+
+        @keyframes fade {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes nav {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
